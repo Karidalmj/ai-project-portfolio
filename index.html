@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="刘孟洁的 AI 产品与项目作品集：产品实习、AI 工具、macOS 应用与自动化 Skills"
+    />
+    <title>刘孟洁｜AI 产品与项目作品集</title>
+    <style>
+      :root {
+        --yellow: #f6c945;
+        --yellow-soft: #ffe58a;
+        --paper: #fff9e9;
+        --ink: #1d1b18;
+        --orange: #e96832;
+        --red: #cf3f24;
+        --line: #1d1b18;
+        --left-column: 40%;
+        --hero-photo-column: 32%;
+        --hero-bottom-height: clamp(128px, 9vw, 176px);
+        --page-padding: clamp(22px, 3.6vw, 52px);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--yellow);
+        color: var(--ink);
+        font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.52;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1440px, 100%);
+        margin: 0 auto;
+        border-right: 2px solid var(--line);
+        border-left: 2px solid var(--line);
+      }
+
+      .topbar {
+        display: flex;
+        min-height: 66px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 0 var(--page-padding);
+        border-bottom: 2px solid var(--line);
+      }
+
+      .wordmark,
+      .topbar nav a,
+      .eyebrow,
+      .meta,
+      .project-no,
+      .project-kind,
+      .field-label,
+      .experience-date,
+      .footer-label {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .wordmark {
+        text-decoration: none;
+      }
+
+      .topbar nav {
+        display: flex;
+        gap: 28px;
+      }
+
+      .topbar nav a {
+        text-decoration: none;
+      }
+
+      .topbar nav a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) var(--hero-photo-column);
+        border-bottom: 2px solid var(--line);
+      }
+
+      .hero-copy {
+        display: flex;
+        min-height: 520px;
+        min-width: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(34px, 5vw, 66px) var(--page-padding) 0;
+        border-right: 2px solid var(--line);
+      }
+
+      .hero-copy > div:first-child {
+        padding-bottom: 30px;
+      }
+
+      .eyebrow {
+        margin: 0;
+      }
+
+      h1 {
+        margin: 28px 0 10px;
+        font-size: clamp(78px, 10.6vw, 154px);
+        font-weight: 900;
+        line-height: 0.84;
+        letter-spacing: -0.07em;
+      }
+
+      .hero-title-subtitle {
+        margin: 0;
+        font-size: clamp(20px, 2.1vw, 29px);
+        font-weight: 900;
+        letter-spacing: -0.035em;
+      }
+
+      .hero-intro {
+        max-width: 430px;
+        margin: 24px 0 0;
+        font-size: clamp(16px, 1.3vw, 19px);
+        font-weight: 650;
+        letter-spacing: 0;
+      }
+
+      .hero-bottom {
+        display: grid;
+        min-height: var(--hero-bottom-height);
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 22px 34px;
+        margin: 28px 0 0;
+        padding: 10px 0;
+        border-top: 2px solid var(--line);
+      }
+
+      .directory {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .directory-label {
+        grid-column: 1 / -1;
+        margin-bottom: 2px;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+
+      .directory a {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 10px 11px;
+        border: 2px solid var(--line);
+        background: var(--paper);
+        font-size: clamp(14px, 1.25vw, 17px);
+        font-weight: 900;
+        text-decoration: none;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .directory a::after {
+        content: "↘";
+        font-size: 18px;
+      }
+
+      .directory a:hover {
+        background: var(--orange);
+        transform: translate(-2px, -2px);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        margin: 0;
+        justify-content: flex-end;
+      }
+
+      .button,
+      .project-link {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 12px;
+        border: 2px solid var(--line);
+        background: var(--ink);
+        color: var(--paper);
+        font-size: 13px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .button {
+        padding: 11px 14px;
+      }
+
+      .button::after,
+      .project-link::after,
+      .link-row::after {
+        content: "↗";
+        font-size: 17px;
+        line-height: 0.8;
+      }
+
+      .button:hover,
+      .project-link:hover {
+        background: var(--orange);
+        color: var(--ink);
+        transform: translate(-3px, -3px);
+      }
+
+      .hero-photo {
+        position: relative;
+        min-height: 520px;
+        overflow: hidden;
+        background: var(--orange);
+      }
+
+      .hero-photo img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: calc(100% - var(--hero-bottom-height));
+        min-height: 0;
+        object-fit: cover;
+        object-position: center 70%;
+        filter: saturate(0.9) contrast(1.03);
+      }
+
+      .photo-mark {
+        position: absolute;
+        top: 24px;
+        right: 26px;
+        display: grid;
+        width: 82px;
+        height: 82px;
+        place-items: center;
+        border: 2px solid var(--line);
+        border-radius: 50%;
+        background: var(--yellow);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-align: center;
+        transform: rotate(11deg);
+      }
+
+      .photo-caption {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        height: var(--hero-bottom-height);
+        align-items: flex-start;
+        margin: 0;
+        padding: 14px 20px;
+        border-top: 2px solid var(--line);
+        background: var(--yellow);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section-heading,
+      .section-strip {
+        display: flex;
+        min-height: 96px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 20px var(--page-padding);
+        border-bottom: 2px solid var(--line);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .section-heading h2,
+      .section-strip h2 {
+        margin: 0;
+        font-size: clamp(31px, 3.8vw, 51px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .section-heading p,
+      .section-strip p {
+        max-width: 260px;
+        margin: 0;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .projects {
+        padding: clamp(24px, 3.4vw, 48px) var(--page-padding) clamp(22px, 3vw, 40px);
+        background: var(--paper);
+      }
+
+      .project-carousel {
+        position: relative;
+      }
+
+      .project-viewport {
+        overflow: hidden;
+        padding: 2px;
+        cursor: grab;
+        touch-action: pan-y;
+        user-select: none;
+      }
+
+      .project-viewport.is-dragging {
+        cursor: grabbing;
+      }
+
+      .project-viewport.is-dragging a {
+        pointer-events: none;
+      }
+
+      .project-track {
+        display: flex;
+        gap: 18px;
+        will-change: transform;
+      }
+
+      .project {
+        display: flex;
+        min-width: 0;
+        min-height: 518px;
+        flex: 0 0 calc((100% - 36px) / 3);
+        flex-direction: column;
+        border: 2px solid var(--line);
+        background: var(--yellow);
+      }
+
+      .project:nth-child(3n + 2) {
+        background: var(--yellow-soft);
+      }
+
+      .project:nth-child(3n) {
+        background: var(--orange);
+      }
+
+      .project-media {
+        display: grid;
+        width: 100%;
+        height: clamp(276px, 28vw, 382px);
+        place-items: center;
+        overflow: hidden;
+        border-bottom: 2px solid var(--line);
+        background: #fffdf6;
+      }
+
+      .project-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .project-media--pet {
+        background: var(--paper);
+      }
+
+      .project-media--pet img {
+        transform: translateY(-6%);
+      }
+
+      .project-media--monitor {
+        background: #101014;
+      }
+
+      .project-card-body {
+        display: flex;
+        min-width: 0;
+        flex: 1;
+        flex-direction: column;
+        padding: 22px 22px 20px;
+      }
+
+      .project-no,
+      .project-kind {
+        margin: 0;
+      }
+
+      .project-no {
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+
+      .project-card h3 {
+        margin: 14px 0 0;
+        font-size: clamp(20px, 1.75vw, 27px);
+        font-weight: 900;
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+      }
+
+      .project-kind {
+        order: -1;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .project-description {
+        margin: 18px 0 0;
+        font-size: clamp(15px, 1.2vw, 17px);
+        font-weight: 650;
+        line-height: 1.55;
+      }
+
+      .project-card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: auto;
+        padding-top: 22px;
+      }
+
+      .project-card-actions .project-link {
+        margin: 0;
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .project-card-actions .project-link-secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .project-card-actions .project-link-secondary:hover {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .project-carousel-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .project-carousel-hint {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .carousel-controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      .carousel-button {
+        display: grid;
+        width: 44px;
+        height: 40px;
+        place-items: center;
+        border: 2px solid var(--line);
+        background: var(--yellow);
+        color: var(--ink);
+        font-size: 23px;
+        font-weight: 800;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .carousel-button:hover {
+        background: var(--orange);
+        transform: translate(-2px, -2px);
+      }
+
+      .experience-wrap {
+        background: var(--yellow);
+      }
+
+      .section-strip {
+        min-height: 82px;
+      }
+
+      .section-strip h2 {
+        font-size: clamp(28px, 3.2vw, 43px);
+      }
+
+      .section-strip p {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .section-strip-actions {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+
+      .section-strip-actions p {
+        max-width: none;
+        white-space: nowrap;
+      }
+
+      .section-strip-button {
+        flex: 0 0 auto;
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .section-strip-button:hover {
+        background: var(--orange);
+        color: var(--ink);
+      }
+
+      #work,
+      #experience,
+      #links {
+        scroll-margin-top: 18px;
+      }
+
+      .experiences {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .experience {
+        display: flex;
+        min-height: 306px;
+        flex-direction: column;
+        padding: clamp(28px, 3.6vw, 48px) var(--page-padding);
+        border-right: 2px solid var(--line);
+        border-bottom: 2px solid var(--line);
+        background: var(--paper);
+      }
+
+      .experience:nth-child(even) {
+        border-right: 0;
+        background: #fffdf6;
+      }
+
+      .experience h3 {
+        max-width: 420px;
+        margin: 26px 0 12px;
+        font-size: clamp(26px, 3vw, 38px);
+        font-weight: 900;
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+      }
+
+      .experience-role {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .experience p:last-child {
+        max-width: 520px;
+        margin: auto 0 0;
+        padding-top: 28px;
+        border-top: 2px solid var(--line);
+        font-size: 15px;
+        font-weight: 550;
+      }
+
+      .footer {
+        display: grid;
+        grid-template-columns: var(--left-column) minmax(0, 1fr);
+        border-bottom: 2px solid var(--line);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .footer-title {
+        display: flex;
+        min-height: 250px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 31px var(--page-padding);
+        border-right: 2px solid var(--line);
+        background: var(--red);
+        color: var(--ink);
+      }
+
+      .footer-title h2 {
+        margin: 28px 0 0;
+        font-size: clamp(37px, 4.5vw, 58px);
+        font-weight: 900;
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+      }
+
+      .footer-links {
+        display: grid;
+      }
+
+      .link-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 19px var(--page-padding);
+        border-bottom: 2px solid var(--paper);
+        font-size: clamp(16px, 1.45vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        transition: background 160ms ease, color 160ms ease;
+      }
+
+      .link-row:last-child {
+        border-bottom: 0;
+      }
+
+      .link-row:hover {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--red);
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 790px) {
+        :root {
+          --hero-bottom-height: 96px;
+        }
+
+        .page {
+          border-width: 1.5px;
+        }
+
+        .topbar,
+        .hero,
+        .section-heading,
+        .project,
+        .experience,
+        .footer {
+          border-width: 1.5px;
+        }
+
+        .topbar nav {
+          display: none;
+        }
+
+        .hero,
+        .footer {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy {
+          min-height: 0;
+          border-right: 0;
+          border-bottom: 1.5px solid var(--line);
+        }
+
+        h1 {
+          font-size: clamp(70px, 20vw, 112px);
+          line-height: 0.88;
+        }
+
+        .hero-photo {
+          min-height: 360px;
+        }
+
+        .hero-photo img {
+          min-height: 0;
+        }
+
+        .hero-bottom {
+          grid-template-columns: 1fr;
+          align-items: stretch;
+        }
+
+        .directory {
+          grid-template-columns: 1fr;
+        }
+
+        .directory-label {
+          grid-column: auto;
+        }
+
+        .hero-actions {
+          align-items: flex-start;
+        }
+
+        .meta {
+          justify-content: flex-start;
+        }
+
+        .section-heading {
+          min-height: 106px;
+          align-items: end;
+        }
+
+        .section-strip {
+          min-height: 74px;
+          align-items: center;
+        }
+
+        .section-heading p,
+        .section-strip p {
+          display: none;
+        }
+
+        .section-strip-actions {
+          margin-left: auto;
+        }
+
+        .section-strip-button {
+          padding: 9px 11px;
+          font-size: 12px;
+        }
+
+        .projects {
+          padding-top: 22px;
+        }
+
+        .project-track {
+          gap: 14px;
+        }
+
+        .project {
+          min-height: 470px;
+          flex-basis: 82%;
+        }
+
+        .project-media {
+          height: 334px;
+        }
+
+        .project-card-body {
+          padding: 20px;
+        }
+
+        .project-card h3 {
+          font-size: clamp(22px, 6vw, 30px);
+        }
+
+        .project-carousel-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .carousel-controls {
+          align-self: flex-end;
+        }
+
+        .experiences {
+          grid-template-columns: 1fr;
+        }
+
+        .experience,
+        .experience:nth-child(even) {
+          min-height: 270px;
+          border-right: 0;
+          border-bottom: 1.5px solid var(--line);
+        }
+
+        .footer-title {
+          min-height: 180px;
+          border-right: 0;
+          border-bottom: 1.5px solid var(--line);
+        }
+
+        .link-row {
+          border-bottom-width: 1.5px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .button,
+        .project-link,
+        .link-row {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header id="top">
+        <div class="topbar">
+          <a class="wordmark" href="#top">LIU MENGJIE / PORTFOLIO</a>
+          <nav aria-label="页面导航">
+            <a href="#work">个人项目</a>
+            <a href="#experience">实习经历</a>
+            <a href="#links">相关链接</a>
+          </nav>
+        </div>
+
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <div>
+              <p class="eyebrow">Product · Data · AI</p>
+              <h1 id="page-title">刘孟洁</h1>
+              <p class="hero-title-subtitle">AI 产品作品集</p>
+              <p class="hero-intro">围绕真实需求，将产品思考、数据能力与 AI 工具做成可被使用的体验</p>
+            </div>
+            <div class="hero-bottom">
+              <div class="directory" aria-label="作品集目录">
+                <span class="directory-label">目录 / DIRECTORY</span>
+                <a href="#work">个人项目</a>
+                <a href="#experience">实习经历</a>
+                <a href="#links">项目链接</a>
+              </div>
+              <div class="hero-actions">
+                <p class="meta"><span>05 PROJECTS</span><span>04 INTERNSHIPS</span><span>2024—2026</span></p>
+                <a class="button" href="assets/刘孟洁_产品实习_一周5天_6个月.pdf" target="_blank" rel="noopener noreferrer">查看完整简历</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="assets/mengjie-liu.jpeg" alt="刘孟洁在夜景中的照片" />
+            <span class="photo-mark">HELLO<br />THERE</span>
+            <p class="photo-caption">LIU MENGJIE · SHANGHAI</p>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section id="work" aria-labelledby="work-title">
+          <div class="section-heading">
+            <h2 id="work-title">个人项目</h2>
+            <p>从生活中的具体问题出发，完成可使用、可分享的小工具与自动化流程</p>
+          </div>
+
+          <div class="projects">
+            <div class="project-carousel" aria-label="个人项目轮播">
+              <div class="project-viewport">
+                <div class="project-track">
+                  <article class="project project-card">
+                    <div class="project-media"><img src="assets/hair-color-tool.png" alt="AI 发色选择工具的发色选择界面" /></div>
+                    <div class="project-card-body">
+                      <p class="project-kind">Web Tool</p>
+                      <p class="project-no">01 / 05</p>
+                      <h3>AI 发色选择工具</h3>
+                      <p class="project-description">帮助用户降低挑选发色时的信息搜集与想象成本，完成更直观的发色选择</p>
+                      <div class="project-card-actions">
+                        <a class="project-link" href="https://hair-color-mirror.solar-larch-6291.chatgpt.site/" target="_blank" rel="noopener noreferrer">打开在线体验</a>
+                        <a class="project-link project-link-secondary" href="https://github.com/Karidalmj/hair-color-studio" target="_blank" rel="noopener noreferrer">GitHub</a>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="project project-card">
+                    <div class="project-media"><img src="assets/bookshelf-widget.png" alt="macOS 阅读状态小组件展示书籍封面、阅读进度和预计完成时间" /></div>
+                    <div class="project-card-body">
+                      <p class="project-kind">macOS Widget</p>
+                      <p class="project-no">02 / 05</p>
+                      <h3>macOS 阅读状态小组件</h3>
+                      <p class="project-description">把书名、阅读进度与预计完成时间放到桌面，随时掌握阅读状态</p>
+                    </div>
+                  </article>
+
+                  <article class="project project-card">
+                    <div class="project-media project-media--pet"><img src="assets/codex-pet-energy.jpg" alt="Codex 宠物额度条显示周额度与今日 Token 用量" /></div>
+                    <div class="project-card-body">
+                      <p class="project-kind">Codex Plugin</p>
+                      <p class="project-no">03 / 05</p>
+                      <h3>Codex 宠物额度条</h3>
+                      <p class="project-description">在宠物上方持续展示周额度与今日 Token 用量，并随额度变化切换状态</p>
+                      <div class="project-card-actions"><a class="project-link" href="https://github.com/Karidalmj/codex-pet-energy-bars" target="_blank" rel="noopener noreferrer">查看 GitHub</a></div>
+                    </div>
+                  </article>
+
+                  <article class="project project-card">
+                    <div class="project-media"><img src="assets/hover-translator.png" alt="浏览器字幕悬停翻译插件展示单词释义" /></div>
+                    <div class="project-card-body">
+                      <p class="project-kind">Browser Extension</p>
+                      <p class="project-no">04 / 05</p>
+                      <h3>浏览器字幕悬停翻译插件</h3>
+                      <p class="project-description">悬停字幕单词即可暂停视频并展示中文释义，移开后恢复播放</p>
+                      <div class="project-card-actions"><a class="project-link" href="https://github.com/Karidalmj/Hover-Translator" target="_blank" rel="noopener noreferrer">查看 GitHub</a></div>
+                    </div>
+                  </article>
+
+                  <article class="project project-card">
+                    <div class="project-media project-media--monitor"><img src="assets/mac-monitor.jpg" alt="macOS 菜单栏系统监控工具的系统指标界面" /></div>
+                    <div class="project-card-body">
+                      <p class="project-kind">macOS Menu Bar</p>
+                      <p class="project-no">05 / 05</p>
+                      <h3>macOS 菜单栏系统监控工具</h3>
+                      <p class="project-description">将 CPU、运行内存等常用状态压缩为随时可见的菜单栏信息</p>
+                      <div class="project-card-actions"><a class="project-link" href="https://github.com/Karidalmj/MacMonitor-MenuBar-simple" target="_blank" rel="noopener noreferrer">查看 GitHub</a></div>
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+              <div class="project-carousel-footer">
+                <p class="project-carousel-hint">左右滑动查看全部项目 / 05 PROJECTS</p>
+                <div class="carousel-controls" aria-label="项目轮播控制">
+                  <button class="carousel-button" type="button" data-carousel-direction="previous" aria-label="查看上一个项目">←</button>
+                  <button class="carousel-button" type="button" data-carousel-direction="next" aria-label="查看下一个项目">→</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience-wrap" id="experience" aria-labelledby="experience-title">
+          <div class="section-heading section-strip">
+            <h2 id="experience-title">实习经历</h2>
+            <div class="section-strip-actions">
+              <p>Internship experience / 2024—2026</p>
+              <a class="button section-strip-button" href="assets/刘孟洁_产品实习_一周5天_6个月.pdf" target="_blank" rel="noopener noreferrer">查看完整 PDF 简历</a>
+            </div>
+          </div>
+
+          <div class="experiences">
+            <article class="experience">
+              <p class="experience-date">2026.02 — 2026.06</p>
+              <h3>美团<br />金融服务</h3>
+              <p class="experience-role">大模型产品</p>
+              <p>参与微贷与生意保 AI 电销专项，优化 Prompt 与流程链路；牵头输出机器人智能质检标准化方案，并通过一线调研支撑产品优化</p>
+            </article>
+            <article class="experience">
+              <p class="experience-date">2025.09 — 2026.02</p>
+              <h3>美团<br />点评事业部</h3>
+              <p class="experience-role">数据产品 · 搜索业务</p>
+              <p>推进 AI 异动分析能力嵌入数据工具，并独立用 AI 编码完成黄金价格追踪页面，提升用户获取行情与业务洞察的效率</p>
+            </article>
+            <article class="experience">
+              <p class="experience-date">2025.04 — 2025.09</p>
+              <h3>字节跳动</h3>
+              <p class="experience-role">策略产品</p>
+              <p>参与拉新促销策略设计与 AB 实验验证，围绕预算腾挪、用户分层和竞品画像分析，为业务团队提供策略与看板优化支持</p>
+            </article>
+            <article class="experience">
+              <p class="experience-date">2024.08 — 2024.11</p>
+              <h3>百观科技</h3>
+              <p class="experience-role">数据分析</p>
+              <p>运用 NLP 分析社媒展览文本，提炼体验优化建议；同时参与乳制品指标体系梳理及瑞幸长期市场竞争跟踪研究</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <section class="section-heading section-strip" id="links" aria-labelledby="links-title">
+        <h2 id="links-title">项目与简历链接</h2>
+        <p>Links &amp; Resume</p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-title">
+          <p class="footer-label">Links &amp; Resume</p>
+          <h2>项目与<br />简历链接</h2>
+        </div>
+        <div class="footer-links" aria-label="项目与简历链接">
+          <a class="link-row" href="assets/刘孟洁_产品实习_一周5天_6个月.pdf" target="_blank" rel="noopener noreferrer"><span>查看完整 PDF 简历</span></a>
+          <a class="link-row" href="https://hair-color-mirror.solar-larch-6291.chatgpt.site/" target="_blank" rel="noopener noreferrer"><span>发色工具在线体验</span></a>
+          <a class="link-row" href="https://github.com/Karidalmj/hair-color-studio" target="_blank" rel="noopener noreferrer"><span>AI 发色选择工具</span></a>
+          <a class="link-row" href="https://github.com/Karidalmj/codex-pet-energy-bars" target="_blank" rel="noopener noreferrer"><span>Codex 宠物额度条</span></a>
+          <a class="link-row" href="https://github.com/Karidalmj/Hover-Translator" target="_blank" rel="noopener noreferrer"><span>浏览器字幕悬停翻译插件</span></a>
+          <a class="link-row" href="https://github.com/Karidalmj/MacMonitor-MenuBar-simple" target="_blank" rel="noopener noreferrer"><span>macOS 菜单栏系统监控工具</span></a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      (() => {
+        const carousel = document.querySelector('.project-carousel')
+        if (!carousel) return
+
+        const viewport = carousel.querySelector('.project-viewport')
+        const track = carousel.querySelector('.project-track')
+        const cards = Array.from(track.children)
+        const controls = carousel.querySelectorAll('[data-carousel-direction]')
+        const initialCards = cards.length
+        const cloneCount = 3
+        const defaultProjectIndex = 2
+        let index = cloneCount + defaultProjectIndex
+        let cardWidth = 0
+        let gap = 18
+        let pointerStart = null
+        let dragging = false
+        let wheelLocked = false
+
+        cards.slice(0, cloneCount).forEach((card) => track.appendChild(card.cloneNode(true)))
+        cards.slice(-cloneCount).reverse().forEach((card) => track.insertBefore(card.cloneNode(true), track.firstChild))
+
+        const measure = () => {
+          const firstCard = track.querySelector('.project')
+          const styles = getComputedStyle(track)
+          gap = Number.parseFloat(styles.gap) || 0
+          cardWidth = firstCard.getBoundingClientRect().width
+          index = Math.max(cloneCount, Math.min(index, initialCards + cloneCount - 1))
+          move(false)
+        }
+
+        const move = (animate = true) => {
+          track.style.transition = animate ? 'transform 360ms ease' : 'none'
+          track.style.transform = `translateX(${-index * (cardWidth + gap)}px)`
+        }
+
+        const step = (direction) => {
+          index += direction
+          move()
+        }
+
+        track.addEventListener('transitionend', () => {
+          if (index >= initialCards + cloneCount) {
+            index = cloneCount
+            move(false)
+          }
+          if (index < cloneCount) {
+            index = initialCards + cloneCount - 1
+            move(false)
+          }
+        })
+
+        controls.forEach((control) => {
+          control.addEventListener('click', () => step(control.dataset.carouselDirection === 'next' ? 1 : -1))
+        })
+
+        viewport.addEventListener('pointerdown', (event) => {
+          if (event.target.closest('a, button')) return
+          pointerStart = event.clientX
+          dragging = true
+          viewport.classList.add('is-dragging')
+          viewport.setPointerCapture(event.pointerId)
+          track.style.transition = 'none'
+        })
+
+        viewport.addEventListener('pointermove', (event) => {
+          if (!dragging || pointerStart === null) return
+          const offset = event.clientX - pointerStart
+          track.style.transform = `translateX(${-(index * (cardWidth + gap)) + offset}px)`
+        })
+
+        const endDrag = (event) => {
+          if (!dragging || pointerStart === null) return
+          const delta = event.clientX - pointerStart
+          dragging = false
+          pointerStart = null
+          viewport.classList.remove('is-dragging')
+          if (Math.abs(delta) > Math.min(80, cardWidth * 0.18)) {
+            step(delta < 0 ? 1 : -1)
+          } else {
+            move()
+          }
+        }
+
+        viewport.addEventListener('pointerup', endDrag)
+        viewport.addEventListener('pointercancel', endDrag)
+        viewport.addEventListener('wheel', (event) => {
+          const horizontalIntent = Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey
+          if (!horizontalIntent || wheelLocked) return
+          event.preventDefault()
+          wheelLocked = true
+          step((event.deltaX || event.deltaY) > 0 ? 1 : -1)
+          window.setTimeout(() => {
+            wheelLocked = false
+          }, 380)
+        }, { passive: false })
+        window.addEventListener('resize', measure)
+        measure()
+      })()
+    </script>
+  </body>
+</html>
