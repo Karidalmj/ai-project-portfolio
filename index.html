@@ -8,6 +8,9 @@
       content="刘孟洁的 AI 产品与项目作品集：产品实习、AI 工具、macOS 应用与自动化 Skills"
     />
     <title>刘孟洁｜AI 产品与项目作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
       :root {
         --yellow: #f6c945;
@@ -819,6 +822,620 @@
         .project-link,
         .link-row {
           transition: none;
+        }
+      }
+      /* Pink Script editorial redesign */
+      :root {
+        --ink-deep: #060507;
+        --ink-violet: #0f0d11;
+        --paper-blush: #f5edf1;
+        --pink: #ed3d8c;
+        --pink-light: #ff66a8;
+        --pink-deep: #b81d67;
+        --line-pink: rgba(237, 61, 140, 0.34);
+        --hair-paper: rgba(245, 237, 241, 0.15);
+        --mute-paper: rgba(245, 237, 241, 0.62);
+        --frame-inset: clamp(12px, 2vw, 32px);
+      }
+
+      body {
+        background: radial-gradient(ellipse 92% 72% at 18% 6%, #1a1218 0%, #0b080b 55%, #050306 100%);
+        color: var(--paper-blush);
+        font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-synthesis: none;
+        line-height: 1.6;
+      }
+
+      .page {
+        position: relative;
+        width: min(1600px, calc(100% - clamp(24px, 5vw, 88px)));
+        margin: clamp(12px, 2.5vw, 36px) auto;
+        overflow: hidden;
+        border: 1px solid var(--hair-paper);
+        background: radial-gradient(ellipse 100% 70% at 12% 0%, rgba(65, 35, 53, 0.38) 0%, transparent 58%), var(--ink-deep);
+      }
+
+      .page::before {
+        position: absolute;
+        z-index: 20;
+        inset: var(--frame-inset);
+        border: 1px solid rgba(245, 237, 241, 0.12);
+        content: "";
+        pointer-events: none;
+      }
+
+      .page::after {
+        position: absolute;
+        z-index: 19;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.13) 0.45px, transparent 0.7px), radial-gradient(rgba(237, 61, 140, 0.12) 0.45px, transparent 0.7px);
+        background-position: 0 0, 3px 5px;
+        background-size: 7px 7px, 11px 11px;
+        content: "";
+        mix-blend-mode: screen;
+        opacity: 0.08;
+        pointer-events: none;
+      }
+
+      .topbar {
+        position: relative;
+        z-index: 1;
+        min-height: 78px;
+        padding: 0 calc(var(--page-padding) + var(--frame-inset));
+        border-bottom: 1px solid var(--hair-paper);
+      }
+
+      .wordmark,
+      .topbar nav a,
+      .eyebrow,
+      .meta,
+      .project-no,
+      .project-kind,
+      .field-label,
+      .experience-date,
+      .footer-label,
+      .directory-label,
+      .project-carousel-hint {
+        font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .wordmark {
+        color: var(--pink);
+      }
+
+      .topbar nav {
+        gap: clamp(18px, 2.8vw, 42px);
+      }
+
+      .topbar nav a {
+        color: var(--mute-paper);
+        transition: color 180ms ease;
+      }
+
+      .topbar nav a:hover {
+        color: var(--pink);
+        text-decoration: none;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid var(--hair-paper);
+      }
+
+      .hero-copy {
+        min-height: clamp(590px, 56vw, 760px);
+        padding: clamp(52px, 7vw, 110px) calc(var(--page-padding) + var(--frame-inset)) 0;
+        border-right: 1px solid var(--hair-paper);
+      }
+
+      .hero-copy > div:first-child {
+        position: relative;
+      }
+
+      .hero-copy > div:first-child::before {
+        position: absolute;
+        top: 14%;
+        left: 5%;
+        width: min(50vw, 560px);
+        height: min(32vw, 340px);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(237, 61, 140, 0.16), transparent 68%);
+        content: "";
+        filter: blur(15px);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        position: relative;
+        z-index: 1;
+        color: var(--pink);
+      }
+
+      h1,
+      .section-heading h2,
+      .section-strip h2,
+      .footer-title h2,
+      .project-card h3,
+      .experience h3 {
+        font-family: "DM Serif Display", "Noto Serif SC", "Songti SC", serif;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        color: var(--pink);
+        font-family: "Noto Serif SC", "Songti SC", "DM Serif Display", serif;
+        font-size: clamp(86px, 12vw, 190px);
+        font-weight: 800;
+        line-height: 0.9;
+        letter-spacing: -0.09em;
+        text-shadow: 0 0 70px rgba(237, 61, 140, 0.22);
+      }
+
+      .hero-title-subtitle {
+        position: relative;
+        z-index: 1;
+        color: var(--paper-blush);
+        font-family: "DM Serif Display", "Noto Serif SC", serif;
+        font-size: clamp(27px, 3vw, 44px);
+        font-weight: 400;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-intro {
+        position: relative;
+        z-index: 1;
+        max-width: 470px;
+        color: var(--mute-paper);
+        font-size: clamp(15px, 1.28vw, 18px);
+        font-weight: 300;
+        letter-spacing: 0.01em;
+      }
+
+      .hero-bottom {
+        border-top: 1px solid var(--line-pink);
+      }
+
+      .directory {
+        gap: 0 14px;
+      }
+
+      .directory-label {
+        margin-bottom: 12px;
+        color: var(--pink);
+      }
+
+      .directory a {
+        min-height: 42px;
+        padding: 8px 0;
+        border: 0;
+        border-bottom: 1px solid var(--hair-paper);
+        background: transparent;
+        color: var(--paper-blush);
+        font-size: clamp(13px, 1.1vw, 15px);
+        font-weight: 400;
+        transition: border-color 180ms ease, color 180ms ease;
+      }
+
+      .directory a::after {
+        color: var(--pink);
+      }
+
+      .directory a:hover {
+        border-color: var(--pink);
+        background: transparent;
+        color: var(--pink);
+        transform: none;
+      }
+
+      .hero-actions {
+        gap: 16px;
+      }
+
+      .meta {
+        gap: 6px 15px;
+        color: var(--mute-paper);
+      }
+
+      .button,
+      .project-link {
+        border: 1px solid var(--pink);
+        background: var(--pink);
+        color: var(--ink-deep);
+        font-family: "JetBrains Mono", "PingFang SC", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .button {
+        padding: 12px 15px;
+      }
+
+      .button:hover,
+      .project-link:hover {
+        background: transparent;
+        color: var(--pink);
+        transform: translateY(-2px);
+      }
+
+      .hero-photo {
+        min-height: clamp(590px, 56vw, 760px);
+        background: var(--ink-violet);
+      }
+
+      .hero-photo::after {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(6, 5, 7, 0.04) 28%, rgba(6, 5, 7, 0.45) 100%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-photo img {
+        object-position: center 66%;
+        filter: saturate(0.72) contrast(1.06) brightness(0.82);
+      }
+
+      .photo-mark {
+        z-index: 2;
+        top: clamp(24px, 3vw, 42px);
+        right: clamp(22px, 3vw, 42px);
+        border: 1px solid var(--pink);
+        background: rgba(6, 5, 7, 0.36);
+        color: var(--pink);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .photo-caption {
+        z-index: 2;
+        padding: 19px 22px;
+        border-top: 1px solid var(--line-pink);
+        background: var(--ink-violet);
+        color: var(--paper-blush);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+      }
+
+      .section-heading,
+      .section-strip {
+        position: relative;
+        z-index: 1;
+        min-height: 132px;
+        padding: 28px calc(var(--page-padding) + var(--frame-inset));
+        border-bottom: 1px solid var(--hair-paper);
+        background: var(--ink-deep);
+        color: var(--paper-blush);
+      }
+
+      .section-heading h2,
+      .section-strip h2 {
+        color: var(--pink);
+        font-family: "Noto Serif SC", "Songti SC", "DM Serif Display", serif;
+        font-size: clamp(43px, 5vw, 75px);
+        font-weight: 600;
+        line-height: 0.92;
+        letter-spacing: -0.07em;
+        text-shadow: 0 0 54px rgba(237, 61, 140, 0.16);
+      }
+
+      .section-heading p,
+      .section-strip p {
+        max-width: 290px;
+        color: var(--mute-paper);
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      .projects {
+        position: relative;
+        z-index: 1;
+        padding: clamp(28px, 4.3vw, 68px) calc(var(--page-padding) + var(--frame-inset)) clamp(26px, 3.4vw, 50px);
+        background: linear-gradient(180deg, #0f0d11 0%, #090709 100%);
+      }
+
+      .project-viewport {
+        padding: 1px;
+      }
+
+      .project {
+        min-height: 548px;
+        border: 1px solid var(--line-pink);
+        background: var(--ink-violet);
+      }
+
+      .project:nth-child(3n + 2) {
+        background: #120c12;
+      }
+
+      .project:nth-child(3n) {
+        background: #10090e;
+      }
+
+      .project-media {
+        border-bottom: 1px solid var(--line-pink);
+        background: var(--paper-blush);
+      }
+
+      .project-media--pet {
+        background: var(--paper-blush);
+      }
+
+      .project-card-body {
+        padding: 24px 23px 22px;
+      }
+
+      .project-no {
+        margin-top: 5px;
+        color: var(--mute-paper);
+      }
+
+      .project-card h3 {
+        color: var(--paper-blush);
+        font-family: "Noto Serif SC", "Songti SC", "DM Serif Display", serif;
+        font-size: clamp(23px, 1.8vw, 31px);
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.055em;
+      }
+
+      .project-kind {
+        color: var(--pink);
+      }
+
+      .project-description {
+        color: var(--mute-paper);
+        font-size: clamp(14px, 1.12vw, 16px);
+        font-weight: 300;
+        line-height: 1.65;
+      }
+
+      .project-card-actions .project-link {
+        padding: 10px 11px;
+        font-size: 10px;
+      }
+
+      .project-card-actions .project-link-secondary {
+        border-color: var(--hair-paper);
+        background: transparent;
+        color: var(--paper-blush);
+      }
+
+      .project-card-actions .project-link-secondary:hover {
+        border-color: var(--pink);
+        background: transparent;
+        color: var(--pink);
+      }
+
+      .project-carousel-hint {
+        color: var(--mute-paper);
+      }
+
+      .carousel-button {
+        width: 46px;
+        border: 1px solid var(--pink);
+        background: transparent;
+        color: var(--pink);
+        font-family: "DM Serif Display", serif;
+        font-size: 24px;
+        font-weight: 400;
+        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .carousel-button:hover {
+        background: var(--pink);
+        color: var(--ink-deep);
+        transform: translateY(-2px);
+      }
+
+      .experience-wrap {
+        position: relative;
+        z-index: 1;
+        background: var(--ink-deep);
+      }
+
+      .section-strip {
+        min-height: 112px;
+      }
+
+      .section-strip h2 {
+        font-size: clamp(38px, 4.1vw, 61px);
+      }
+
+      .section-strip p {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .section-strip-button {
+        background: var(--pink);
+        color: var(--ink-deep);
+      }
+
+      .section-strip-button:hover {
+        background: transparent;
+        color: var(--pink);
+      }
+
+      .experience {
+        min-height: 336px;
+        padding: clamp(31px, 4vw, 62px) calc(var(--page-padding) + var(--frame-inset));
+        border-right: 1px solid var(--hair-paper);
+        border-bottom: 1px solid var(--hair-paper);
+        background: var(--ink-violet);
+      }
+
+      .experience:nth-child(even) {
+        background: #0c090d;
+      }
+
+      .experience-date {
+        color: var(--pink);
+      }
+
+      .experience h3 {
+        color: var(--paper-blush);
+        font-family: "Noto Serif SC", "Songti SC", "DM Serif Display", serif;
+        font-size: clamp(31px, 3vw, 47px);
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: -0.06em;
+      }
+
+      .experience-role {
+        color: var(--mute-paper);
+        font-weight: 400;
+      }
+
+      .experience p:last-child {
+        border-top: 1px solid var(--line-pink);
+        color: var(--mute-paper);
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      .footer {
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid var(--hair-paper);
+        background: var(--ink-violet);
+        color: var(--paper-blush);
+      }
+
+      .footer-title {
+        min-height: 302px;
+        padding: 34px calc(var(--page-padding) + var(--frame-inset));
+        border-right: 1px solid var(--line-pink);
+        background: radial-gradient(circle at 28% 25%, rgba(255, 102, 168, 0.22), transparent 47%), var(--pink-deep);
+        color: var(--paper-blush);
+      }
+
+      .footer-title h2 {
+        color: var(--paper-blush);
+        font-family: "Noto Serif SC", "Songti SC", "DM Serif Display", serif;
+        font-size: clamp(43px, 5vw, 70px);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
+      .link-row {
+        padding: 19px calc(var(--page-padding) + var(--frame-inset));
+        border-bottom: 1px solid var(--hair-paper);
+        color: var(--paper-blush);
+        font-weight: 300;
+        transition: background 180ms ease, color 180ms ease, padding 180ms ease;
+      }
+
+      .link-row::after {
+        color: var(--pink);
+      }
+
+      .link-row:hover {
+        padding-right: calc(var(--page-padding) + var(--frame-inset) + 8px);
+        background: rgba(237, 61, 140, 0.1);
+        color: var(--pink);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--pink-light);
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 960px) {
+        :root {
+          --hero-photo-column: 36%;
+        }
+
+        .hero-bottom {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions,
+        .meta {
+          align-items: flex-start;
+          justify-content: flex-start;
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 790px) {
+        :root {
+          --hero-bottom-height: 94px;
+          --frame-inset: 10px;
+        }
+
+        .page {
+          width: calc(100% - 20px);
+          margin: 10px auto;
+        }
+
+        .page::before {
+          display: none;
+        }
+
+        .topbar {
+          min-height: 62px;
+          padding: 0 calc(var(--page-padding) + 10px);
+        }
+
+        .hero-copy {
+          padding: 62px calc(var(--page-padding) + 10px) 0;
+          border-right: 0;
+          border-bottom: 1px solid var(--hair-paper);
+        }
+
+        h1 {
+          font-size: clamp(76px, 22vw, 132px);
+          line-height: 0.94;
+        }
+
+        .hero-photo {
+          min-height: 440px;
+        }
+
+        .section-heading,
+        .section-strip {
+          min-height: 112px;
+          padding: 25px calc(var(--page-padding) + 10px);
+        }
+
+        .projects {
+          padding: 28px calc(var(--page-padding) + 10px) 34px;
+        }
+
+        .experience,
+        .experience:nth-child(even) {
+          min-height: 282px;
+          padding: 33px calc(var(--page-padding) + 10px);
+          border-bottom: 1px solid var(--hair-paper);
+        }
+
+        .footer-title {
+          min-height: 206px;
+          padding: 32px calc(var(--page-padding) + 10px);
+          border-bottom: 1px solid var(--hair-paper);
+        }
+
+        .link-row {
+          padding: 18px calc(var(--page-padding) + 10px);
+        }
+
+        .link-row:hover {
+          padding-right: calc(var(--page-padding) + 18px);
         }
       }
     </style>
